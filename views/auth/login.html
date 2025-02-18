@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/Auth/login.css" />
+  </head>
+  <body>
+    <section class="main-login">
+      <div class="card-image">
+        <div class="message">
+          <h3 id="login-error"></h3>
+          <h3 id="login-success"></h3>
+        </div>
+        <p>Welcome Developers 😊</p>
+        <img src="img/login.jpg" alt="login" />
+      </div>
+      <div class="card-login">
+        <h2>Masuk ke Akun</h2>
+        <form action="/auth/login" method="post" class="login-form">
+          <div class="input-group">
+            <label for="name">Username</label>
+            <input
+              type="text"
+              placeholder="Masukkan username"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              placeholder="Masukkan email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              placeholder="Masukkan password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p class="register-link">
+            Belum punya akun? <a href="register.html">Daftar</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

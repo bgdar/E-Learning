@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.title}}</title>
+    <link rel="stylesheet" href="/css/views/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <img src="/icons/Elearn.png" alt="E-Learning Logo" />
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Progress</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </nav>
+        <div class="user-profile">
+          <!-- nantik ganti icons otomatis -->
+          <img src="" alt="User Avatar" />
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <section class="welcome-section">
+          <h1>Welcome Back, Learner!</h1>
+          <p>Continue your journey to mastering new skills.</p>
+        </section>
+
+        <section class="progress-section">
+          <h2>Your Progress</h2>
+          <div class="progress-cards">
+            <div class="progress-card">
+              <h3>Course 1</h3>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+              <p>70% Completed</p>
+            </div>
+            <div class="progress-card">
+              <h3>Course 2</h3>
+              <div class="progress-bar">
+                <div class="progress" style="width: 40%"></div>
+              </div>
+              <p>40% Completed</p>
+            </div>
+            <div class="progress-card">
+              <h3>Course 3</h3>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+              <p>90% Completed</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="courses-section">
+          <h2>Recommended Courses</h2>
+          <div class="course-cards">
+            <div class="course-card">
+              <img
+                src="https://via.placeholder.com/200x120"
+                alt="Course Image"
+              />
+              <h3>Introduction to Programming</h3>
+              <p>Learn the basics of programming with Python.</p>
+              <button>Start Course</button>
+            </div>
+            <div class="course-card">
+              <img
+                src="https://via.placeholder.com/200x120"
+                alt="Course Image"
+              />
+              <h3>Web Development Basics</h3>
+              <p>Build your first website using HTML, CSS, and JavaScript.</p>
+              <button>Start Course</button>
+            </div>
+            <div class="course-card">
+              <img
+                src="https://via.placeholder.com/200x120"
+                alt="Course Image"
+              />
+              <h3>Data Science Fundamentals</h3>
+              <p>Explore data analysis and visualization techniques.</p>
+              <button>Start Course</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2023 E-Learning Platform. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

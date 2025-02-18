@@ -1,0 +1,104 @@
+:root {
+  --dark-blue: #1a2238;
+  --navy: #232d4b;
+  --orange: #ff6a3d;
+  --light-blue: #9daaf2;
+  --white: #ffffff;
+  --gray: #6c757d;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  text-align: center;
+  /* overflow-x: hidden; */
+  border: 2px solid var(--light-blue);
+  background-color: var(--navy);
+  border-radius: 7px;
+  padding: 1.5em 0 0;
+  box-shadow: 5px 2px 5px var(--gray);
+  margin-bottom: 40px;
+}
+
+.profile-header .profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+}
+.profile-header .menu-card {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--gray);
+  border: 2px solid var(--navy); /* Gaya border */
+  padding: 10px;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  border-radius: 10px;
+}
+
+.profile-header .menu-card .profile-name {
+  font-size: 24px;
+  margin: 10px 0 5px;
+  color: var(--white); /* Teks terlihat jelas */
+}
+
+.profile-header .menu-card .profile-level {
+  font-size: 18px;
+}
+
+.progress-section {
+  margin-bottom: 40px;
+}
+
+.progress-section .section-title {
+  font-size: 20px;
+  color: var(--orange);
+  margin: 20px 0 20px 0;
+}
+
+.progress-section .progress-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-card {
+  background-color: var(--navy);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.progress-card:first-child {
+  margin-left: 0;
+}
+
+.progress-card:last-child {
+  margin-right: 0;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--light-blue);
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--orange);
+}
