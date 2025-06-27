@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 document.addEventListener('DOMContentLoaded', function () {
+  alert('tets cek js is active');
+
   const loginForm = document.getElementById('login-form');
   const loginButton = document.getElementById('login-button');
   const loginError = document.getElementById('login-error');

@@ -23,3 +23,7 @@ TestResults.xml
 
 node_modules/
 dist/
+
+# my-sql data bakup
+# Ignore MySQL Docker volume
+docker/mysql-data/

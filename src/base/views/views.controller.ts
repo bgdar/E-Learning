@@ -4,14 +4,13 @@ import { Response } from 'express';
 @Controller('views')
 export class ViewsController {
   //halaman Home
-  @Render('views/home')
+  @Render('base/views/home')
   @Get('home')
   home() {
     return { title: 'Home Page' };
   }
 
-  //halama yang di baawhnya
-  //halaman yang tidak terdifinisi
+  //halama yang di baawhnya /views/...
   @Get('*')
   allHandle(@Res() res: Response) {
     res.status(404);
