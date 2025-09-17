@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="/css/user/auth/login.css" />
+    <link rel="stylesheet" href="/css/user/user/singIn.css" />
   </head>
   <body>
     <section class="main-login">
@@ -18,27 +18,18 @@
       </div>
       <div class="card-login">
         <h2>Masuk ke Akun</h2>
-        <form action="/auth/login" method="post" class="login-form">
+        <form action="/user/login" method="post" class="login-form">
           <div class="input-group">
-            <label for="name">Username</label>
+            <label for="username">Username</label>
             <input
               type="text"
               placeholder="Masukkan username"
-              name="name"
-              id="name"
+              name="username"
+              id="username"
               required
             />
           </div>
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              placeholder="Masukkan email"
-              id="email"
-              name="email"
-              required
-            />
-          </div>
+        
           <div class="input-group">
             <label for="password">Password</label>
             <input
@@ -51,13 +42,13 @@
           </div>
           <button type="submit" class="btn">Login</button>
           <p class="register-link">
-            Belum punya akun? <a href="/auth/signUp">Daftar</a>
+            Belum punya akun? <a href="/user/signUp">Daftar</a>
           </p>
         </form>
       </div>
     </section>
 
     <!-- js -->
-    <script src="/js/Auth/signIn.js"></script>
+    <script src="/js/user/user/signIn.js"></script>
   </body>
 </html>

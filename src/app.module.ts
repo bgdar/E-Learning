@@ -4,14 +4,15 @@ import { ConfigModule } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './user/user.module';
+import { UserModule } from './user/user.module';
 import { BaseModule } from './base/base.module';
+import { BaseServiceService } from './base/base-service/base-service.service';
 
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, BaseServiceService],
   imports: [
-    // ORM konfigurasi for DATABASE
+    // ORM konfigurasi for DATABASE start
     ConfigModule.forRoot(), // ⬅️ aktifkan dotenv
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -23,8 +24,8 @@ import { BaseModule } from './base/base.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, // ⚠️ nonaktifkan di production
     }),
-
-    AuthModule,
+    // ORM konfigurasi for DATABASE end
+    UserModule,
     BaseModule,
   ],
 })

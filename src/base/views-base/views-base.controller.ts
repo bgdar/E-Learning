@@ -1,16 +1,15 @@
 import { Controller, Get, Render, Res } from '@nestjs/common';
 import { Response } from 'express';
 
-@Controller('views')
-export class ViewsController {
+@Controller('views-base')
+export class BaseViewsController {
   //halaman Home
-  @Render('base/views/home')
+  @Render('base/views-base/home')
   @Get('home')
   home() {
     return { title: 'Home Page' };
   }
 
-  //halama yang di baawhnya /views/...
   @Get('*')
   allHandle(@Res() res: Response) {
     res.status(404);

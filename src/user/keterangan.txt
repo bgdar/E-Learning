@@ -1,4 +1,0 @@
-
-tabel user
-1. User = pengguna biasa 
-2. Admin = pengguna yang tingkat lanjut  rencananya admin bisa memmantanent User ibaratkan Dosen

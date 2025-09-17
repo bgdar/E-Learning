@@ -51,7 +51,7 @@ header .nav ul li a {
 }
 
 header .nav ul li a:hover {
-  color: #ff6a3d; /* Warna aksen oranye saat hover */
+  color: #ff6a3d; 
 }
 
 header .user-profile img {

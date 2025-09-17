@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     axios
-      .post('/auth/login', {
+      .post('/user/login', {
         name: name,
         password: password,
         email: email,
