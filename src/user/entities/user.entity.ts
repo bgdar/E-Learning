@@ -13,7 +13,7 @@ export class User {
   @Column({type:"varchar" ,length:150})
   email: string;
   
-  @Column({ select: false,length:100})
+  @Column({ select: false,length:100}) // ini tidak bisa di panggil dengan method seperti find dan lainya 
   password: string;
 
   @CreateDateColumn({type : "timestamp"})

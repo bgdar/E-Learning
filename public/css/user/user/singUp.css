@@ -105,3 +105,27 @@ h2 {
 .login-link a:hover {
   text-decoration: underline;
 }
+
+
+/*  Other */
+.popop {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  /* background-color: var(--orange); */
+  /* color: var(--white); */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.popop #popup-message {
+
+  font-size: 12px;
+
+}
+
+.popo-show {
+  opacity: 1;
+}

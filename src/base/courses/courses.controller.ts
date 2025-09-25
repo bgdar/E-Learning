@@ -6,6 +6,9 @@ export class CoursesController {
   @Render("base/courses/home")
   @Get("/courses")
   courses(){
+
+    // dapatkan dan tampilkan data cource 
+
     return {title : "courses page"}
   }
 

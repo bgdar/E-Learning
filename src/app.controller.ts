@@ -10,4 +10,14 @@ export class AppController {
   dashboard() {
     return { title: 'page dashboard' };
   }
+
+
+  //  ini akan ke block route di bawahnya
+  // @Get(':path(*)')
+  // @Render('404')
+  // allHandle() {
+  //   return { title: '404 Not Found' };
+  // }
 }
+
+

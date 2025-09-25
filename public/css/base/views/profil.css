@@ -7,12 +7,96 @@
   --gray: #6c757d;
 }
 
+
+/* Popup flash message start */
+.popup {
+  position: fixed;
+  top: 20px;           /* Jarak dari atas */
+  right: 20px;         /* Jarak dari kanan */
+  z-index: 9999;       /* Pastikan selalu di atas elemen lain */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;           /* Jarak antar alert */
+  max-width: 300px;    /* Batas lebar agar rapi */
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup .alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+  transition: opacity 0.3s;
+}
+
+.popup .alert:hover {
+  opacity: 1;
+}
+
+/* === Variasi warna === */
+.alert-danger {
+  background-color: #e74c3c; /* merah */
+}
+
+.alert-info {
+  background-color: #3498db; /* biru */
+}
+
+.alert-success {
+  background-color: #2ecc71; /* hijau */
+}
+/* Popup flash message end */
+
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--dark-blue);
   color: var(--white);
   margin: 0;
   padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap : 10px ;
+  padding:15px;
+  margin-top: 10px;
+  background-color: var(--light-blue);
+  margin-bottom: 10px;
+
+}
+header .menu-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+header .menu-1 button {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+header .menu-1 button:hover {
+  background-color: darken(var(--orange), 10%);
 }
 
 .main-content {
@@ -59,6 +143,28 @@ body {
   font-size: 18px;
 }
 
+
+.profile-header .another-menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.profile-header .another-menu button {
+  background-color: var(--orange);
+  border: none;
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-header .another-menu button:hover {
+  background-color: darken(var(--orange), 10%);
+}
+
 .progress-section {
   margin-bottom: 40px;
 }
@@ -101,4 +207,66 @@ body {
   font-size: 24px;
   font-weight: bold;
   color: var(--orange);
+}
+
+/*  card tambahan untuk menu Settings dan edit profile */
+.setting-popup{
+  /* display: none; Hidden by default */
+  position: fixed; 
+  bottom: -250px; /* ini sama dengan popup yg lain agar serasi saat tampil */
+  z-index: 120; 
+  right: 50%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--navy);
+  border: 2px solid var(--light-blue);
+  border-radius: 10px;
+  box-shadow: 5px 2px 5px var(--gray);
+  padding: 15px;
+}
+.setting-popup .menu {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+.setting-popup .menu button a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--white);
+  padding: 10px;
+}
+.setting-popup .menu button {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.setting-popup .menu button:hover {
+  background-color: darken(var(--orange), 10%);
+}
+
+.edit-profil-popup {
+  /* display: none; */
+  position : fixed;
+  bottom: -200px;
+  z-index: 125;
+    right: 50%;
+
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--navy);
+  border: 2px solid var(--light-blue);
+  border-radius: 10px;
+  box-shadow: 5px 2px 5px var(--gray);
+  padding: 15px;
+}
+.active-popup {
+  display: block;
+  animation: slideUp 0.5s forwards;
+  bottom: unset; /* hilanngkan bottom agar popup naik */
+  top: 10%;
+
+
 }

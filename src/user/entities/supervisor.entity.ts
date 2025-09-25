@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 
 // User
 @Entity()
-export class Admin {
+export class Supervisor {
   @PrimaryGeneratedColumn({type:"int"})
   id: number;
 
@@ -10,12 +10,12 @@ export class Admin {
   name: string;
 
   @Column({type:"varchar" , nullable:true})
-  email : String
+  email : string
 
   @Column({select:false})
   //di simpan dalam bentuk hash dan  select:false -> supaya tidak ikut di-return default saat query
   // kalau mau ambil password harus pakai addSelect() di query builder
-  password : String
+  password : string
 
   @CreateDateColumn({type : "timestamp"})
   cretaeAt : Date

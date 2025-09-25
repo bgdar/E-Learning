@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/base/views/profil.css" />
+    <title>Profil | {{ .name }}</title>
+  </head>
+  <body>
+
+    <!-- popup flash message  start -->
+ <div class="popup">
+{{#errorMessage}}
+<div class="alert alert-danger">{{errorMessage}}</div>
+{{/errorMessage}}
+{{#infoMessage}}
+<div class="alert alert-info">{{infoMessage}}</div>
+{{/infoMessage}}
+{{#successMessage}}
+<div class="alert alert-success">{{successMessage}}</div>
+{{/successMessage}}
+ </div>
+
+ <!--  header di sebelah kanan aja -->
+ <header>
+  <div class=" menu-1">
+    <button type="button"><a href="/home">back</a></button>
+  </div>
+
+
+
+ </header>
+
+<!-- popup flash message eand -->
+    <div class="main-content">
+      <header class="profile-header">
+        <div class="profile-info">
+          <img
+            src="profile-pic.jpg"
+            alt="Profile Picture"
+            class="profile-pic"
+          />
+          <div class="menu-card">
+            <h1 class="profile-name">name {{{ name }}}</h1>
+            <p class="profile-level">{{ level }}</p>
+          </div>
+        </div>
+        
+        <div class="another-menu">
+          <button class="edit-profile-btn">Edit Profile</button>
+          <button class="settings-btn">Settings</button>
+        </div>
+
+        <!-- menu utama di bagian ujung  -->
+         <div class="main-menu">
+          <button type="button"><a href="/supervisor/signIn">supervisor</a>
+        </button>
+         </div>
+      </header>
+
+      <section class="progress-section">
+        <h2 class="section-title">Progress</h2>
+        <div class="progress-cards">
+          <div class="progress-card">
+            <h3 class="card-title">Streak</h3>
+            <p class="card-value">15 days</p>
+          </div>
+          <div class="progress-card">
+            <h3 class="card-title">XP</h3>
+            <p class="card-value">1,200</p>
+          </div>
+          <div class="progress-card">
+            <h3 class="card-title">Lessons</h3>
+            <p class="card-value">50</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- card tambahan untuk menu Settings dan edit profile -->
+     <div class="setting-popup">
+      <span class="close-btn">&times;</span>
+      <span class="profile-icon">&#128100;</span>
+
+      <h3>Settings </h3>
+
+      <h3>Settings</h3>
+      <ol>
+        <li><button class="logout-btn">Logout</button></li>
+        <li><button class="delete-account-btn">Delete Account</button></li>
+        <li><button class="change-password-btn">Change Password</button></li>
+        <li><button class="notification-settings-btn">Notification Settings</button></li>
+        <li><button class="privacy-settings-btn">Privacy Settings</button></li>
+        <li><button class="language-settings-btn">Language Settings</button></li>
+        <li><button class="theme-settings-btn">Theme Settings</button></li>
+      </ol>
+      <div class="menu">
+        
+
+        <button id="close" type="button">close</button>
+      </div>
+     </div>
+
+     <div class="edit-profil-popup">
+      <h5>Edit profil</h5>
+      <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ .name }}" />
+
+        <button type="submit" class="save-btn">Save Changes</button>
+        <button type="button" class="cancel">Cancel</button>
+      </form>
+
+     </div>
+
+    <script src="/js/base/profil.js" defer></script>
+  </body>
+</html>

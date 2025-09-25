@@ -38,7 +38,11 @@
 3. axios             = saya gunakan untuk menghadle http di client
 4. ts-node           = untuk developer mode sementara
 5. typeorm           = project ini menggunakn ORM untuk koneksi 
-6. argon2            = untuk hashing password 
+6. cookie-parser     =  untuk mengahandle __cookies__ di project ini ( dan saya manfaatkan untuk __flash message__)
+  - `flash-error` => untuk message error
+  - `flash-success` => untuk message success
+  - `flash-info` => untuk info
+7. argon2            = untuk hashing password 
 
 dengan database  __mysql__
 ## page Routing **folder**
@@ -48,7 +52,12 @@ dengan database  __mysql__
 2. `user\` =  
    `user\user` = handle database
 
-> admin di sini akan menjadi induk dari setiap user user nya ( guru)
+
+### Menu
+- **supervisor** ( pengawas ) => ini menu untuk mengahndle banyak user 
+  -> akses di halaman __profil__ 
+  - Midlleware Supervisor  , flash message ke cookies
+      - `supervisor-username`
 
 
 ## app color 

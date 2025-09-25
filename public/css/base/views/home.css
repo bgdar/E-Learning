@@ -11,6 +11,58 @@ html {
   overflow-x: hidden;
 }
 
+/* Popup flash message start */
+.popup {
+  position: fixed;
+  top: 20px;           /* Jarak dari atas */
+  right: 20px;         /* Jarak dari kanan */
+  z-index: 9999;       /* Pastikan selalu di atas elemen lain */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;           /* Jarak antar alert */
+  max-width: 300px;    /* Batas lebar agar rapi */
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup .alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+  transition: opacity 0.3s;
+}
+
+.popup .alert:hover {
+  opacity: 1;
+}
+
+/* === Variasi warna === */
+.alert-danger {
+  background-color: #e74c3c; /* merah */
+}
+
+.alert-info {
+  background-color: #3498db; /* biru */
+}
+
+.alert-success {
+  background-color: #2ecc71; /* hijau */
+}
+/* Popup flash message end */
+
 .dashboard-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -18,7 +70,6 @@ html {
   padding: 20px;
 }
 
-/*Header Styles */
 header {
   width: 100%;
   display: flex;
@@ -28,7 +79,11 @@ header {
   gap: 10px;
   border-bottom: 1px solid #ff6a3d; /* Warna aksen oranye */
 }
-
+header .logo a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 header .logo img {
   height: 50px;
   width: 50px;

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Res } from '@nestjs/common';
 import { User } from '../entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -18,7 +18,6 @@ export class UserService {
     private userRepositori : Repository<User> ){
 
     }
-
      // USER
   async createUser(name: string ,email :string , password : string) {
     const hashPassword = await argon2.hash(password)
@@ -29,20 +28,38 @@ export class UserService {
   }
 
   /**
-   * 
+   * Cek user apakah ada di database
    * @param name nama user yang akan di cek
-   * @param password password user yang akan di cek 
-   * @returns  Promise<booolean> 
+   * @param password password user yang akan di cek
+   * @returns  Promise<boolean>
    */
   async checkUser(name:string , password : string): Promise<boolean>{
-    const user = await this.userRepositori.findOneBy({
-        name : name 
-    })
-    if (!user) return false;
+    const user = await this.userRepositori.createQueryBuilder("user")
+    .addSelect("user.password")
+    .where("user.name = :name",{name})
+    .getOne();
 
+    if (!user) return false;
     // verifikasi password hash
     const isValid = await argon2.verify(user.password, password);
     return isValid;
   }
+
+
+ /**
+  * 
+  * @param name nama yg di gunakan untuk menecek email di database
+  * @returns Promise<string | null>: email
+  */
+async getEmail(name  : string) : Promise<string | null > {
+  const dataUser = await  this.userRepositori.findOneBy({
+    name
+  })
+  if(!dataUser) return null ;
+  return dataUser["email"]
+
+  }
+
+
 
 }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/user/admin/dashboard.css">
-    <title>{{name}} | admin</title>
+    <link rel="stylesheet" href="/css/user/supervisor/dashboard.css">
+    <title>{{name}} | supervisor</title>
 </head>
 <body>
 
  <!-- Sidebar -->
   <aside class="sidebar">
-    <h2>Admin</h2>
+    <h2>supervisor | {{ name}}</h2>
     <ul>
       <li><a href="#">Dashboard</a></li>
       <li><a href="#">Users</a></li>
@@ -26,14 +26,29 @@
     <header>
       <h3>Welcome, {{name}}</h3>
       <div class="profile">
-        <img src="https://via.placeholder.com/40" alt="Admin Avatar">
-        <span>Admin</span>
+        <img src="https://via.placeholder.com/40" alt="supervisor Avatar">
+        <span></span>
       </div>
     </header>
 
     <!-- Dashboard Content -->
     <main>
-      <h2>Dashboard Overview</h2>
+      <h2>Dashboard Student</h2>
+
+      <!-- menu menu untuk management cources sebagai supervisor start -->
+       <section class="menu">
+
+        <div class="menu-1">
+
+          <!-- buat untuk menghandle service source nantik misal saat mau menambah cource baru -->
+          <button type="button">add new cource</button>
+          <button type="button">delete cource</button>
+        </div>
+
+
+       </section>
+      <!-- menu menu untuk management cources sebagai supervisor and -->
+
 
       <div class="cards">
         <div class="card">
@@ -46,7 +61,7 @@
         </div>
         <div class="card">
           <h3>12</h3>
-          <p>Admins</p>
+          <p>supervisors</p>
         </div>
         <div class="card">
           <h3>99%</h3>

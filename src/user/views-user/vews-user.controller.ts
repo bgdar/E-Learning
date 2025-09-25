@@ -1,5 +1,5 @@
-import { Body, Controller, Res, Get, Post, Render } from '@nestjs/common';
-import { Response } from 'express';
+import { Body, Controller, Res, Req, Get, Post, Render } from '@nestjs/common';
+import { Response , Request} from 'express';
 
 import { UserService } from '../user-service/user.service';
 
@@ -21,16 +21,40 @@ export class AuthController {
     @Body('username') username: string,
     @Body('password') password: string,
     @Res() respons: Response,
+    @Req() request : Request,
   ) {
-    console.log(username, password);
+    console.log("pass dan user : ",username, password);
+
    // cek user login
    this.userService.checkUser(username,password).then((isUser)=>{
      if (isUser) {
+
+  // simpan cookiew ( untuk sekarang seperti ini aja dulu )      
+  respons.cookie("username",username, {
+    maxAge: 900000, // 15 menit
+    httpOnly: true,
+  })
+  respons.cookie("flash-success","anda berhasil login",{
+    maxAge : 5000,
+    httpOnly : true,
+  })
+       console.log("user ada di database");
+       // redirect ke halaman home
+  respons.status(302);
+
        return respons.redirect('/views-base/home');
-     } else {
-       return respons.redirect('/user/signUp');
+     } 
+     else {
+      //  ini di validasi di client nantik
+      respons.cookie("flash-error","username atau password salah")
      }
+
    }).catch(function(err){
+    respons.cookie("flash-error","username atau password salah",{
+      maxAge : 5000,
+      httpOnly : true,
+    })
+    
     console.error("[x] terjadi error pada singIn user :",err)
    })
   }
